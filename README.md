@@ -1,9 +1,15 @@
-# README
+# Depot Application
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Setup
 
-Things you may want to cover:
+```
+rails new depot --css tailwind
+cd depot
+ls -p
+bin/rails generate scaffold Product title:string description:text image_url:string price:decimal
+bin/rails db:migrate
+bin/dev
+```
 
 * Ruby version
 

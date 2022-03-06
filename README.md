@@ -15,9 +15,15 @@ bin/rails dbconsole
 bin/rails db:rollback
 bin/rails db:migrate
 
+binr/rails test:models
+ls -ls db/test.sqlite3
+rm db/test.sqlite3
+bin/rails db:test:prepare
+ls -ls db/test.sqlite3
+
 git add .
 git commit -m "Fully configured"
-goit checkout .
+git checkout .
 ```
 
 ## Books

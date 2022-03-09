@@ -23,6 +23,8 @@ bin/dev
 bin/rails about
 bin/rails generate controller Store index
 bin/dev
+
+bin/rails dev:cache
 ```
 
 ## Database
@@ -41,6 +43,7 @@ bin/rails db:seed
 ```
 bin/rails test
 bin/rails test:models
+bin/rails test:controllers
 
 cat test/fixtures/products.yml
 rm db/test.sqlite3

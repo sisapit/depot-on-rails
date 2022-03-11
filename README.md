@@ -17,11 +17,26 @@ with Ruby on Rails 7
 rails new depot --css tailwind
 
 cd depot
-bin/rails generate scaffold Product title:string description:text image_url:string price:decimal
-bin/dev
-
 bin/rails about
+bin/rails generate scaffold Product title:string description:text image_url:string price:decimal
 bin/rails generate controller Store index
+bin/rails generate scaffold Cart
+      create    db/migrate/20220311230729_create_carts.rb
+      create    app/models/cart.rb
+      create    test/models/cart_test.rb
+      create    test/fixtures/carts.yml
+       route    resources :carts
+      create    app/controllers/carts_controller.rb
+      create    app/views/carts
+      create    app/views/carts/index.html.erb
+      create    app/views/carts/edit.html.erb
+      create    app/views/carts/show.html.erb
+      create    app/views/carts/new.html.erb
+      create    app/views/carts/_form.html.erb
+      create    app/views/carts/_cart.html.erb
+      create    test/controllers/carts_controller_test.rb
+      create    test/system/carts_test.rb
+      create    app/helpers/carts_helper.rb
 bin/dev
 
 bin/rails dev:cache

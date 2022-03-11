@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :carts
   # get 'store/index'
   # controller#action = 'store#index'
   # as: tells Rails to create store_index_path and store_index_url accessor methods.

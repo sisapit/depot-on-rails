@@ -11,6 +11,6 @@ class StoreControllerTest < ActionDispatch::IntegrationTest
     assert_select 'main ul li', 3
     assert_select 'h2', 'Programming Ruby 1.9'
     # Test price format
-    assert_select 'div', /\$[,\d]+\.\d\d/
+    assert_select 'div', /\EUR [\.\d]+,\d\d/
   end
 end

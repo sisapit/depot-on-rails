@@ -17,7 +17,7 @@
               <p>
                 <%= sanitize(p.description) %> </p>
               <div class="mt-3">
-                <%= number_to_currency p.price, precision: 4, unit: "EUR ", separator: ",", strip_insignificant_zeros: true %>
+                <%= number_to_currency p.price, precision: 2, unit: "EUR ", separator: ",", strip_insignificant_zeros: false %>
               </div>
             </div>
           </li>

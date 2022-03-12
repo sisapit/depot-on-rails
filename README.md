@@ -11,6 +11,23 @@ with Ruby on Rails 7
 * RubyGems 3.3.3
 * Rack 2.2.3
 
+## Models
+
+![](app/assets/images/models.svg)
+```
+@startuml
+class Product
+hide members
+
+Product "1" -- "0..n" "Line Item" : referenced in >
+note right on link: Prevents deletion
+
+Cart "1" *- "0..n" "Line Item" : contains >
+note top on link: Cascading delete
+
+@enduml
+```
+
 ## Setup
 
 ```
@@ -37,8 +54,9 @@ bin/rails generate scaffold Cart
       create    test/controllers/carts_controller_test.rb
       create    test/system/carts_test.rb
       create    app/helpers/carts_helper.rb
+bin/rails generate scaffold LineItem product:references cart:belongs_to      
+bin/rails db:migrate
 bin/dev
-
 bin/rails dev:cache
 ```
 
@@ -73,7 +91,9 @@ git commit -m "Fully configured"
 git checkout .
 ```
 
-## Books
+## Books & Bookmarks
 
-[Docker for Rails Developers](https://pragprog.com/titles/ridocker/docker-for-rails-developers/)
+* [PlantUML Class Diagram](https://plantuml.com/de/class-diagram)
+* [Rails 7.0 ActiveSupport::Testing::Assertions](https://api.rubyonrails.org/classes/ActiveSupport/Testing/Assertions.html)
+* [Docker for Rails Developers](https://pragprog.com/titles/ridocker/docker-for-rails-developers/)
 

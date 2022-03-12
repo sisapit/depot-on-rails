@@ -6,7 +6,7 @@ one:
   image_url: ruby.jpg
   price: 19.99
 
-two:
+rails:
   title: Ruby on Rails 7.0
   description: Laber laber
   image_url: rails.png

@@ -74,6 +74,9 @@ class LineItemsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def line_item_params
-      params.require(:line_item).permit(:product_id, :cart_id)
+      # Our controller is our first line of defense. Let’s go ahead and remove cart_id from the
+      # list of parameters that are permitted!
+      # params.require(:line_item).permit(:product_id, :cart_id)
+      params.require(:line_item).permit(:product_id)
     end
 end

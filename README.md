@@ -94,6 +94,8 @@ cat test/fixtures/products.yml
 rm db/test.sqlite3
 bin/rails db:test:prepare
 ls -ls db/test.sqlite3
+
+bin/rails log:clear LOGS=test
 ```
 
 ### Git

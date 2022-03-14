@@ -1,4 +1,7 @@
 class LineItemsController < ApplicationController
+  include CurrentCart
+  # Declare that the set_cart() method is to be involved before the create() action.
+  before_action :set_cart, only: [:create]
   before_action :set_line_item, only: %i[ show edit update destroy ]
 
   # GET /line_items or /line_items.json
@@ -21,11 +24,17 @@ class LineItemsController < ApplicationController
 
   # POST /line_items or /line_items.json
   def create
-    @line_item = LineItem.new(line_item_params)
+    # Use the params object to get the :product_id parameter from the request.
+    # Variable p is a local variable instead of an instance variable, because there's no need to make it available to the view.
+    p = Product.find(params[:product_id])
+    # Build a new line item relationship between the @cart object and the product.
+    # Nite: You can build the relationship from either end, and Rails takes care of establishing the connections on both sides.
+    @line_item = @cart.line_items.build(product: p)
+    session[:counter] = 0
 
     respond_to do |format|
       if @line_item.save
-        format.html { redirect_to line_item_url(@line_item), notice: "Line item was successfully created." }
+        format.html { redirect_to cart_url(@line_item.cart), notice: "Line item was successfully added to your cart." }
         format.json { render :show, status: :created, location: @line_item }
       else
         format.html { render :new, status: :unprocessable_entity }

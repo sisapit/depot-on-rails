@@ -15,6 +15,8 @@
 # Visit https://pragprog.com/titles/rails7 for more book information.
 #---
 # encoding: utf-8
+LineItem.delete_all
+Cart.delete_all
 Product.delete_all
 Product.create!(title: 'Docker for Rails Developers',
                 description:
@@ -32,6 +34,16 @@ Product.create!(title: 'Docker for Rails Developers',
                 image_url: 'ridocker.jpg',
                 price: 19.95)
 # . . .
+Product.create!(title: 'Rework - Succeed in your business',
+                description:
+                  %{<p>Rework shows you a better, faster, easier way to succeed in business.</p>
+<p>Most business books give you the same old advice: Write a business plan, study the competition, seek investors, yadda yadda. If you're looking for a book like that, put this one back on the shelf.</p>
+<p>Read it and you'll know why plans are actually harmful, why you don't need outside investors, and why you're better off ignoring the competition. The truth is, you need less than you think. You don't need to be a workaholic. You don't need to staff up. You don't need to waste time on paperwork or meetings. You don't even need an office. Those are all just excuses.</p>
+<p>What you really need to do is stop talking and start working. This book shows you the way. You'll learn how to be more productive, how to get exposure without breaking the bank, and tons more counterintuitive ideas that will inspire and provoke you.</p>
+},
+                image_url: 'rework.jpg',
+                price: 29.90)
+
 Product.create!(title: 'Design and Build Great Web APIs',
                 description:
                   %{<p>
@@ -48,7 +60,16 @@ Product.create!(title: 'Design and Build Great Web APIs',
       </p>},
                 image_url: 'maapis.jpg',
                 price: 24.95)
-# . . .
+
+Product.create!(title: 'How to Kill a Unicorn: How the World\'s Hottest Innovation Factory Builds Bold Ideas That Make It to Market ',
+                description:
+                  %{
+<p><b>A unique behind-the-scenes look at the groundbreaking methodology that today's most in-demand innovation factory uses to create some of the boldest products and successfully bring them to market.</b></p>
+<p>Today, innovation is seen by business leaders and the media alike as the key to growth, a burning issue in every company, from startups to the Fortune 500. And in that space, Fahrenheit 212 is viewed as a high-performance innovation SWAT team, able to solve the most complex, mission-critical challenges. Under Mark Payne, the firm's president and head of Idea Development, Fahrenheit 212, since its inception a decade ago, has worked with such giants of industry as Coca-Cola, Samsung, Hershey's, Campbell's Soup, LG, Starbucks, Mattel, Office Depot, Citibank, P&G, American Express, Nutrisystem, GE, and Goldman Sachs, to name but a few. It has been praised as a hotspot for innovation in publications like Fortune, Esquire, Businessweek, and FastCompany.</p>
+<p>What Drives Fahrenheit 212's success is its unique methodology, combining what it calls Magic--the creative side of innovation--with Money, the business side. They explore every potential idea with the end goal in mind--bringing an innovative product to market in a way that will transform a company's business and growth. In How to Kill a Unicorn, Mark Payne pulls back the curtain on how the company is able to bring more innovative products and ideas successfully to market than any other firm and offers blow by blow inside accounts of how they grapple with and solved their biggest challenges.</p>
+                  },
+                image_url: 'unicorn.jpg',
+                price: 33.76)
 
 Product.create!(title: 'Modern CSS with Tailwind',
                 description:

@@ -21,7 +21,8 @@ class LineItemsControllerTest < ActionDispatch::IntegrationTest
     end
     follow_redirect!
     assert_select 'h2', 'Your Pragmatic Cart'
-    assert_select 'li', 'Programming Ruby 1.9'
+    # Caution: <section><nav> contains some <li> as well, so we need to use a more specific selector!
+    assert_select 'main ul li', '1 × Programming Ruby 1.9'
   end
 
   test "should show line item" do

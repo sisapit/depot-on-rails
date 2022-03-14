@@ -15,7 +15,7 @@
       <% @products.each do |p| %>
         <% cache p do %>
           <li class='flex mb-6'>
-            <%= image_tag(p.image_url, class: 'object-contain w-40 h-48 shadow mr-6') %>
+            <%= image_tag(p.image_url, class: 'object-contain w-40 h-48 border-2 border-slate-300 mr-6') %>
             <div>
               <h2 class="font-bold text-lg mb-3"><%= p.title %></h2>
               <p>

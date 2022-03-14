@@ -56,8 +56,18 @@ bin/rails generate scaffold Cart
       create    app/helpers/carts_helper.rb
 bin/rails generate scaffold LineItem product:references cart:belongs_to      
 bin/rails db:migrate
+
 bin/dev
 bin/rails dev:cache
+
+bin/rails generate migration add_quantity_to_line_items quantity:integer
+bin/rails db:migrate
+
+bin/rails generate migration combine_items_in_cart
+bin/rails db:migrate
+bin/dev
+bin/rails db:rollback
+bin/rails db:migrate:status
 ```
 
 ## Database
@@ -69,6 +79,8 @@ bin/rails dbconsole
 bin/rails db:rollback
 bin/rails db:migrate
 bin/rails db:seed
+
+bin/rails db:migrate:status
 ```
 
 ## Testing
@@ -93,6 +105,7 @@ git checkout .
 
 ## Books & Bookmarks
 
+* [assert_select](https://apidock.com/rails/ActionController/Assertions/SelectorAssertions/assert_select)
 * [PlantUML Class Diagram](https://plantuml.com/de/class-diagram)
 * [Rails 7.0 ActiveSupport::Testing::Assertions](https://api.rubyonrails.org/classes/ActiveSupport/Testing/Assertions.html)
 * [Docker for Rails Developers](https://pragprog.com/titles/ridocker/docker-for-rails-developers/)

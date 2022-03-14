@@ -2,8 +2,8 @@
 
 <div id="<%= dom_id cart %>">
   <h2 class="font-bold text-lg mb-3" style="color:red">Your Pragmatic Cart</h2>
-  <ul class="list-disc list-inside">
+  <ul class="list-none list-inside">
     <% cart.line_items.each do |i| %>
-      <li><%= i.product.title %></li>
+      <li><%= i.quantity %> &times; <%= i.product.title %></li>
     <% end %> </ul>
 </div>

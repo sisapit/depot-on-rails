@@ -29,7 +29,7 @@ class LineItemsController < ApplicationController
     p = Product.find(params[:product_id])
     # Build a new line item relationship between the @cart object and the product.
     # Nite: You can build the relationship from either end, and Rails takes care of establishing the connections on both sides.
-    @line_item = @cart.line_items.build(product: p)
+    @line_item = @cart.add_product(p)
     session[:counter] = 0
 
     respond_to do |format|
